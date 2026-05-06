@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Bettini Dias - Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu principal usado para acessar todas as páginas do site -->
+    <header>
+        <div class="topo">
+            <h1>Rafael Bettini Dias</h1>
+            <p>Portfólio pessoal</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Sobre mim</a>
+            <a href="formacao.html">Formação</a>
+            <a href="portfolio.html">Portfólio</a>
+            <a class="ativo" href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <!-- Conteúdo da página Contato com informações de contato e formulário para envio de mensagens -->
+    <main>
+        <section class="caixa">
+            <h2>Contato</h2>
+            <p>
+                Você pode entrar em contato pelo e-mail
+                <strong>rafaeldiasbettini@gmail.com</strong> ou usar o formulário abaixo.
+            </p>
+
+            <form id="formContato" novalidate>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem"></textarea>
+
+                <button type="submit">Enviar mensagem</button>
+            </form>
+
+            <p id="resultado" class="mensagem-formulario"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site desenvolvido para a atividade prática de Segurança em Ambiente Web.</p>
+    </footer>
+
+    <script>
+        // Este script valida o formulário e simula o envio da mensagem.
+        const formulario = document.getElementById("formContato");
+        const resultado = document.getElementById("resultado");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+            // Expressão regular simples para validar o formato do e-mail
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            if (nome === "" || email === "" || mensagem === "") {
+                resultado.textContent = "Por favor, preencha todos os campos.";
+                resultado.className = "mensagem-formulario erro";
+                return;
+            }
+
+            if (!emailValido) {
+                resultado.textContent = "Por favor, digite um e-mail válido.";
+                resultado.className = "mensagem-formulario erro";
+                return;
+            }
+
+            // Se for válido, simula o envio da mensagem
+            formulario.reset();
+            resultado.textContent = "Mensagem enviada com sucesso!";
+            resultado.className = "mensagem-formulario sucesso";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* Estilos gerais do site */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eeeeee;
+    color: #222222;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho com nome e menu */
+header {
+    background-color: #203040;
+    color: white;
+    text-align: center;
+}
+
+.topo {
+    padding: 24px 10px 16px 10px;
+}
+
+.topo h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.topo p {
+    margin: 6px 0 0 0;
+}
+
+nav {
+    background-color: #30475e;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 10px;
+    display: inline-block;
+}
+
+nav a:hover,
+nav a.ativo {
+    background-color: #f0a500;
+    color: #111111;
+}
+
+/* Área principal do conteúdo */
+main {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.caixa {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #cccccc;
+}
+
+h2 {
+    margin-top: 0;
+    color: #203040;
+}
+
+h3 {
+    color: #30475e;
+    margin-bottom: 8px;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Bloco visual para a apresentação */
+.perfil {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* Cards dos projetos */
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.lista-projetos article {
+    border: 1px solid #cccccc;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.lista-projetos h3 {
+    margin-top: 0;
+}
+
+.lista-projetos a {
+    color: #0b5394;
+    font-weight: bold;
+}
+
+/* Estilos do formulário de contato */
+form {
+    margin-top: 18px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #999999;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: #203040;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #30475e;
+}
+
+.mensagem-formulario {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.erro {
+    color: #b00020;
+}
+
+.sucesso {
+    color: #1f7a1f;
+}
+
+footer {
+    text-align: center;
+    padding: 18px;
+    background-color: #203040;
+    color: white;
+    margin-top: 30px;
+}
